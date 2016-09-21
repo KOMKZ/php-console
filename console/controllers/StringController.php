@@ -5,7 +5,7 @@ use yii\console\Controller;
 use common\helpers\StringHelper;
 
 /**
- *
+ * 字符串工具
  */
 class StringController extends Controller{
     public function actionUnderToCamel($string){
