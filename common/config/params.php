@@ -3,9 +3,9 @@ return [
     'adminEmail' => 'admin@example.com',
     'db' => [
         'class' => 'yii\db\Connection',
-        'dsn' => 'mysql:host=localhost;dbname=anyapp',
+        'dsn' => '',
         'username' => '',
         'password' => '',
-        'charset' => 'utf8',
+        'charset' => '',
     ]
 ];
