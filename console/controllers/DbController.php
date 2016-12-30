@@ -32,6 +32,32 @@ class DbController extends Controller
     }
 
 
+    public function actionGetSwgComment($tableName, $dbName){
+        $fields = $this->getTableFields($tableName, $dbName, $host = 'localhost');
+        $comments = $this->getTableComments($tableName, $dbName);
+        $types = $this->getFieldsTypes($tableName, $dbName);
+        $tpl = <<<eot
+
+*  		@SWG\Property(
+*  			property="%s",
+*  			type="%s",%s
+*  			description="%s"
+*  		),
+eot;
+        $format = '';
+        $result = "";
+        foreach($fields as $name){
+            if('integer' == $types[$name]){
+                $format = "\n*  			format=\"int32\",";
+            }else{
+                $format = '';
+            }
+            $result .= sprintf($tpl, $name, $types[$name], $format, $comments[$name]);
+        }
+        echo $result;
+        echo "\n";
+
+    }
 
 
     /**
@@ -104,13 +130,14 @@ class DbController extends Controller
     /**
      * 获取指定表的字段名
      * @param  string $tableName 数据表名
-     * @param  boolean $wrapLine  是否换行显示
      * @param  string $dbName    数据库名，不指定的时候使用配置数据库
+     * @param  boolean $wrapLine  是否换行显示
      * @param  string $host      服务器地址
      * @return string            字段名
      */
-    public function actionGetTableFields($tableName, $wrapLine = false, $dbName = '', $host = 'localhost'){
-        $fields = $this->getTableFields($tableName, $dbName = '', $host = 'localhost');
+    public function actionGetTableFields($tableName, $dbName = '', $wrapLine = false, $host = 'localhost'){
+
+        $fields = $this->getTableFields($tableName, $dbName, $host = 'localhost');
         $result = '';
         $implode = $wrapLine ? "\n" : " ";
         foreach($fields as $value){
@@ -138,14 +165,39 @@ class DbController extends Controller
 
 
     private function getTableFields($tableName, $dbName = '', $host = 'localhost'){
+
         $db = $this->getDbObject($dbName, $host);
         $tableObj = $db->getTableSchema($tableName);
+        if(!$tableObj){
+            throw new \Exception("$tableName doesnt exists.");
+        }
         $columns = $tableObj->columns;
         return ArrayHelper::getColumn($columns,'name');
+    }
+    private function getFieldsTypes($tableName, $dbName = '', $host = 'localhost'){
+        $db = $this->getDbObject($dbName, $host);
+        $tableObj = $db->getTableSchema($tableName);
+        if(!$tableObj){
+            throw new \Exception("$tableName doesnt exists.");
+        }
+        if($tableObj){
+            $columns = $tableObj->columns;
+
+            $types = ArrayHelper::map($columns,'name','phpType');
+            foreach($types as $name=>$value){
+                $types[$name] = Yii::t('app',$value);
+            }
+            return $types;
+        }else{
+            throw new InvalidConfigException("The table does not exist: " . $tableName);
+        }
     }
     private function getTableComments($tableName, $dbName = '', $host = 'localhost'){
         $db = $this->getDbObject($dbName, $host);
         $tableObj = $db->getTableSchema($tableName);
+        if(!$tableObj){
+            throw new \Exception("$tableName doesnt exists.");
+        }
         if($tableObj){
 			$columns = $tableObj->columns;
 			$labels = ArrayHelper::map($columns,'name','comment');
