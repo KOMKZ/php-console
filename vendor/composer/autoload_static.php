@@ -10,6 +10,7 @@ class ComposerStaticInite891c4b7515a738ecd634b6ae08f5359
         '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         '7cca0da9604df282f16d129f538c9833' => __DIR__ . '/..' . '/digitalnature/php-ref/ref.php',
+        '0ccdf99b8f62f02c52cba55802e0c2e7' => __DIR__ . '/..' . '/zircote/swagger-php/src/functions.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -32,11 +33,21 @@ class ComposerStaticInite891c4b7515a738ecd634b6ae08f5359
         ),
         'S' => 
         array (
+            'Symfony\\Component\\Finder\\' => 25,
+            'Swagger\\' => 8,
             'Sirian\\YMLParser\\' => 17,
+        ),
+        'P' => 
+        array (
+            'Payment\\' => 8,
         ),
         'F' => 
         array (
             'Faker\\' => 6,
+        ),
+        'D' => 
+        array (
+            'Doctrine\\Common\\Annotations\\' => 28,
         ),
     );
 
@@ -85,13 +96,29 @@ class ComposerStaticInite891c4b7515a738ecd634b6ae08f5359
         array (
             0 => __DIR__ . '/..' . '/cebe/markdown',
         ),
+        'Symfony\\Component\\Finder\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/finder',
+        ),
+        'Swagger\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zircote/swagger-php/src',
+        ),
         'Sirian\\YMLParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/sirian/yandex-market-language-parser/src',
         ),
+        'Payment\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kitralzhong/payment/src',
+        ),
         'Faker\\' => 
         array (
             0 => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker',
+        ),
+        'Doctrine\\Common\\Annotations\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations',
         ),
     );
 
@@ -105,6 +132,10 @@ class ComposerStaticInite891c4b7515a738ecd634b6ae08f5359
         ),
         'D' => 
         array (
+            'Doctrine\\Common\\Lexer\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/doctrine/lexer/lib',
+            ),
             'Diff' => 
             array (
                 0 => __DIR__ . '/..' . '/phpspec/php-diff/lib',

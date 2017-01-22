@@ -75,6 +75,7 @@ use yii\mail\BaseMailer;
  */
 class Mailer extends BaseMailer
 {
+
     /**
      * @var string message default class name.
      */
@@ -125,6 +126,7 @@ class Mailer extends BaseMailer
      */
     public function getTransport()
     {
+
         if (!is_object($this->_transport)) {
             $this->_transport = $this->createTransport($this->_transport);
         }
@@ -163,6 +165,7 @@ class Mailer extends BaseMailer
      */
     protected function createTransport(array $config)
     {
+
         if (!isset($config['class'])) {
             $config['class'] = 'Swift_MailTransport';
         }

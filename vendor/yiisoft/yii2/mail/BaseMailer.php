@@ -260,7 +260,6 @@ abstract class BaseMailer extends Component implements MailerInterface, ViewCont
             $isSuccessful = $this->sendMessage($message);
         }
         $this->afterSend($message, $isSuccessful);
-
         return $isSuccessful;
     }
 

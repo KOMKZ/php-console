@@ -19,6 +19,7 @@ class FileController extends Controller{
         $trContent = file_get_contents($trFile);
         $tableContent = file_get_contents($tableFile);
         $data = spyc_load_file($yamlFile);
+
         $content = "";
         foreach($data as $item){
             $trs = "";

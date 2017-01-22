@@ -17,6 +17,7 @@ require(__DIR__ . '/console/config/bootstrap.php');
 
 $config = yii\helpers\ArrayHelper::merge(
     require(__DIR__ . '/common/config/main.php'),
+    require(__DIR__ . '/common/config/main-local.php'),
     ['params' => require(__DIR__ . '/common/config/params.php')],
     ['params' => require(__DIR__ . '/common/config/params-local.php')],
     require(__DIR__ . '/console/config/main.php'),

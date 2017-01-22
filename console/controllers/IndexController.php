@@ -8,6 +8,9 @@ use common\models\AttachModel;
  *
  */
 class IndexController extends Controller{
+    public function actionGo(){
+        send_sms('13715194169', 'hello world');
+    }
     public function actionIndex(){
         $attachModel = new AttachModel();
         $postId = 999;
