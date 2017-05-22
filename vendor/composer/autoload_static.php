@@ -8,6 +8,7 @@ class ComposerStaticInite891c4b7515a738ecd634b6ae08f5359
 {
     public static $files = array (
         '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
+        'ad155f8f1cf0d418fe49e248db8c661b' => __DIR__ . '/..' . '/react/promise/src/functions_include.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         '7cca0da9604df282f16d129f538c9833' => __DIR__ . '/..' . '/digitalnature/php-ref/ref.php',
         '0ccdf99b8f62f02c52cba55802e0c2e7' => __DIR__ . '/..' . '/zircote/swagger-php/src/functions.php',
@@ -37,13 +38,27 @@ class ComposerStaticInite891c4b7515a738ecd634b6ae08f5359
             'Swagger\\' => 8,
             'Sirian\\YMLParser\\' => 17,
         ),
+        'R' => 
+        array (
+            'React\\Promise\\' => 14,
+        ),
         'P' => 
         array (
+            'Psr\\Log\\' => 8,
             'Payment\\' => 8,
+        ),
+        'G' => 
+        array (
+            'GuzzleHttp\\Stream\\' => 18,
+            'GuzzleHttp\\Ring\\' => 16,
         ),
         'F' => 
         array (
             'Faker\\' => 6,
+        ),
+        'E' => 
+        array (
+            'Elasticsearch\\' => 14,
         ),
         'D' => 
         array (
@@ -108,13 +123,33 @@ class ComposerStaticInite891c4b7515a738ecd634b6ae08f5359
         array (
             0 => __DIR__ . '/..' . '/sirian/yandex-market-language-parser/src',
         ),
+        'React\\Promise\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/react/promise/src',
+        ),
+        'Psr\\Log\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+        ),
         'Payment\\' => 
         array (
             0 => __DIR__ . '/..' . '/kitralzhong/payment/src',
         ),
+        'GuzzleHttp\\Stream\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/guzzlehttp/streams/src',
+        ),
+        'GuzzleHttp\\Ring\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/guzzlehttp/ringphp/src',
+        ),
         'Faker\\' => 
         array (
             0 => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker',
+        ),
+        'Elasticsearch\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/elasticsearch/elasticsearch/src/Elasticsearch',
         ),
         'Doctrine\\Common\\Annotations\\' => 
         array (

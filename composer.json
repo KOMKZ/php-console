@@ -23,7 +23,7 @@
         "yiisoft/yii2-mongodb" : "^2.0",
         "sirian/yandex-market-language-parser": "^3.0",
         "zircote/swagger-php": "^2.0",
-        "kitralzhong/payment" : "2.7.1"
+        "elasticsearch/elasticsearch": "2.0@beta"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
@@ -34,12 +34,6 @@
     "config": {
         "process-timeout": 1800
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/KOMKZ/payment"
-        }
-    ],
     "extra": {
         "asset-installer-paths": {
             "npm-asset-library": "vendor/npm",

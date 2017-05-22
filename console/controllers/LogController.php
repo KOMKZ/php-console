@@ -61,13 +61,13 @@ class LogController extends Controller{
         }
         list($beginPos, $endPos) = $this->searchByTime($time, $begin, $end);
         if($beginPos > 0){
-            $content = '';
+            // $content = '';
             foreach($time as $lineNum => $item){
                 if($beginPos <= $lineNum && $lineNum <= $endPos){
-                    $content .= $this->getTextFromFromFile($file, $item['line'], $item['line'] + $item['range'] + 1);
+                    echo $this->getTextFromFromFile($file, $item['line'], $item['line'] + $item['range'] + 1);
                 }
             }
-            echo $content;
+            // echo $content;
         }
     }
     private function getOffset($format, $value){
