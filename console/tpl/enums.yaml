@@ -1,0 +1,14 @@
+-
+    name: 虚拟账户状态
+    field: vba_status
+    items:
+        - active|可用
+        - locked|锁定
+-
+    name: 账户变更记录类型
+    field: vbar_type
+    items:
+        - consume|消费记录
+        - recharge|充值记录
+        - refund|退款记录
+        
