@@ -10,9 +10,7 @@ use yii\helpers\VarDumper;
 use yii\helpers\ArrayHelper;
 use yii\helpers\FileHelper;
 use yii\base\InvalidConfigException;
-/**
- * 数据库辅助命令
- */
+
 class DbController extends Controller
 {
     private $_generator = null;
@@ -29,34 +27,6 @@ class DbController extends Controller
     }
     public function setDb($value){
         $this->_db = $value;
-    }
-
-
-    public function actionGetSwgComment($tableName, $dbName){
-        $fields = $this->getTableFields($tableName, $dbName, $host = 'localhost');
-        $comments = $this->getTableComments($tableName, $dbName);
-        $types = $this->getFieldsTypes($tableName, $dbName);
-        $tpl = <<<eot
-
-*  		@SWG\Property(
-*  			property="%s",
-*  			type="%s",%s
-*  			description="%s"
-*  		),
-eot;
-        $format = '';
-        $result = "";
-        foreach($fields as $name){
-            if('integer' == $types[$name]){
-                $format = "\n*  			format=\"int32\",";
-            }else{
-                $format = '';
-            }
-            $result .= sprintf($tpl, $name, $types[$name], $format, $comments[$name]);
-        }
-        echo $result;
-        echo "\n";
-
     }
 
 
@@ -100,7 +70,6 @@ eot;
             $this->error($diffReport . "\n");
         }
 
-
         // 准备初始化
         $generator = $this->getGenerator();
         $command = $db->createCommand();
@@ -127,6 +96,7 @@ eot;
         $this->info($this->getRunTime(), true);
         exit(0);
     }
+    
     /**
      * 获取指定表的字段名
      * @param  string $tableName 数据表名

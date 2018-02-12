@@ -10,9 +10,6 @@ use yii\helpers\ArrayHelper;
  *
  */
 class FileController extends Controller{
-    public function actionParsePhp($fileName = ''){
-
-    }
     public function actionGetStatusTable($yamlFile, $outFile, $trTpl = null , $tableTpl = null, $htmlTpl = null){
         $trFile = $trTpl ? $trTpl : Yii::getAlias('@app/tpl/tr_tpl.tpl');
         $tableFile = $tableTpl ? $tableTpl : Yii::getAlias('@app/tpl/table_tpl.tpl');
@@ -50,6 +47,7 @@ class FileController extends Controller{
         $def['isdefault'] = ArrayHelper::getValue($def, 4, '');
         return $def;
     }
+    
     public function actionEnumsStr($yamlFile, $file){
         $data = spyc_load_file($yamlFile);
         $result = [];
