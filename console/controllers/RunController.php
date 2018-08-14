@@ -9,7 +9,17 @@ use yii\console\Controller;
  */
 class RunController extends Controller{
     public function actionIndex($name){
-        system(Yii::$app->params['cmd_alias'][$name][0]);
+        $others = array_splice($_SERVER['argv'], 3);
+        if($others){
+            system(
+                sprintf(
+                    Yii::$app->params['cmd_alias'][$name][0],
+                    implode(' ', $others)
+                )
+            );
+        }else{
+            system(Yii::$app->params['cmd_alias'][$name][0]);
+        }
     }
     public function actionList(){
         foreach(Yii::$app->params['cmd_alias'] as $name => $item){
