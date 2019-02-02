@@ -45,7 +45,6 @@ class ComposerStaticInite891c4b7515a738ecd634b6ae08f5359
         'P' => 
         array (
             'Psr\\Log\\' => 8,
-            'Payment\\' => 8,
         ),
         'G' => 
         array (
@@ -59,6 +58,7 @@ class ComposerStaticInite891c4b7515a738ecd634b6ae08f5359
         'E' => 
         array (
             'Elasticsearch\\' => 14,
+            'Egulias\\EmailValidator\\' => 23,
         ),
         'D' => 
         array (
@@ -69,19 +69,19 @@ class ComposerStaticInite891c4b7515a738ecd634b6ae08f5359
     public static $prefixDirsPsr4 = array (
         'yii\\swiftmailer\\' => 
         array (
-            0 => __DIR__ . '/..' . '/yiisoft/yii2-swiftmailer',
+            0 => __DIR__ . '/..' . '/yiisoft/yii2-swiftmailer/src',
         ),
         'yii\\redis\\' => 
         array (
-            0 => __DIR__ . '/..' . '/yiisoft/yii2-redis',
+            0 => __DIR__ . '/..' . '/yiisoft/yii2-redis/src',
         ),
         'yii\\mongodb\\' => 
         array (
-            0 => __DIR__ . '/..' . '/yiisoft/yii2-mongodb',
+            0 => __DIR__ . '/..' . '/yiisoft/yii2-mongodb/src',
         ),
         'yii\\gii\\' => 
         array (
-            0 => __DIR__ . '/..' . '/yiisoft/yii2-gii',
+            0 => __DIR__ . '/..' . '/yiisoft/yii2-gii/src',
         ),
         'yii\\faker\\' => 
         array (
@@ -89,7 +89,7 @@ class ComposerStaticInite891c4b7515a738ecd634b6ae08f5359
         ),
         'yii\\debug\\' => 
         array (
-            0 => __DIR__ . '/..' . '/yiisoft/yii2-debug',
+            0 => __DIR__ . '/..' . '/yiisoft/yii2-debug/src',
         ),
         'yii\\composer\\' => 
         array (
@@ -101,7 +101,7 @@ class ComposerStaticInite891c4b7515a738ecd634b6ae08f5359
         ),
         'yii\\bootstrap\\' => 
         array (
-            0 => __DIR__ . '/..' . '/yiisoft/yii2-bootstrap',
+            0 => __DIR__ . '/..' . '/yiisoft/yii2-bootstrap/src',
         ),
         'yii\\' => 
         array (
@@ -131,10 +131,6 @@ class ComposerStaticInite891c4b7515a738ecd634b6ae08f5359
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
         ),
-        'Payment\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/kitralzhong/payment/src',
-        ),
         'GuzzleHttp\\Stream\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/streams/src',
@@ -150,6 +146,10 @@ class ComposerStaticInite891c4b7515a738ecd634b6ae08f5359
         'Elasticsearch\\' => 
         array (
             0 => __DIR__ . '/..' . '/elasticsearch/elasticsearch/src/Elasticsearch',
+        ),
+        'Egulias\\EmailValidator\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator',
         ),
         'Doctrine\\Common\\Annotations\\' => 
         array (
