@@ -1,13 +1,30 @@
 <?php
+use console\helpers\Console;
+$desFormat = [Console::FG_RED];
 return [
-	'adminEmail' => 'kitral.zhong@trainor.cn',
-	'y2log_alias' => [
-		'@rsfr' => '/home/master/pro/php/hsehome2.0/roadsafety/frontend',
-	],
-    'cmd_alias' => [
-        'kill-qq' => [
-            "ps -ef | grep 'QQ' | grep -v grep | awk '{ print $2 }' | xargs kill -9",
-            '杀死QQ后台进程'
+    'cmds' => [
+        'save_self' => [
+            sprintf("echo '%s'", Console::ansiFormat("保存php-console到github", $desFormat)),
+            "cd %cmd_path%",
+            "git add --all",
+            'git commit -m "%0%"',
+            'git push origin master'
         ],
-    ]
+        'save_doc' => [
+            sprintf("echo '%s'", Console::ansiFormat("保存doc到私有仓库", $desFormat)),
+            "cd %doc_path%",
+            "git add --all",
+            'git commit -m "%0%"',
+            'git push origin master'
+        ],
+        'navicat' => [
+            sprintf("echo '%s'", Console::ansiFormat("启动navicat", $desFormat))
+            ,'cd %navicat_path%'
+            ,'./start_navicat'
+
+        ]
+    ],
+    'doc_path' => '',
+    'cmd_path' => '',
+    'navicat_path' => '',
 ];
