@@ -34,6 +34,10 @@ return [
             'git commit -m "%0%"',
             'git push origin master'
         ],
+        'cat_host' => [
+            sprintf("echo '%s'", Console::ansiFormat("查看host:%name%", $desFormat))
+            ,'cat /etc/hosts'
+        ],
         'navicat' => [
             sprintf("echo '%s'", Console::ansiFormat("启动navicat", $desFormat))
             ,'cd %navicat_path%'
@@ -51,9 +55,17 @@ return [
             'nginx -t',
             'service nginx restart'
         ],
+        'proxy' => [
+            sprintf("echo '%s'", Console::ansiFormat("启动代理:%name%", $desFormat))
+            ,'sslocal -c %proxy_conf_path%'
+        ],
         'edit_ng_conf' => [
             sprintf("echo '%s'", Console::ansiFormat("编辑nginx配置文件:%name% {name} {port}", $desFormat))
             ,'gedit /etc/nginx/sites-enabled/%0%.conf',
+        ],
+        'ngrs' => [
+            sprintf("echo '%s'", Console::ansiFormat("重启nginx:%name%", $desFormat))
+            ,'service nginx restart'
         ]
     ],
     'nginx_5.6_tpl' => '
@@ -98,8 +110,16 @@ server {
 		include fastcgi.conf;
 	}
 }',
+    //个人文档仓库本地路径
     'doc_path' => '',
+    //php-console项目本地地址
     'cmd_path' => '',
+    //todo项目本地地址
+    'todo_path' => '',
+    //navicate bin路径地址
     'navicat_path' => '',
+    // 密码文件地址
     'kz_pwd_path' => '',
+    // 代理软件项目文件地址
+    'proxy_conf_path' => '',
 ];
