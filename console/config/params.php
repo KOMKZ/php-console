@@ -22,14 +22,14 @@ return [
         ],
         '5to7' => [
             sprintf("echo '%s'", Console::ansiFormat("php5.6->php7.2:%name%", $desFormat))
-            ,'update-alternatives --set php /usr/bin/php5.6'
-            ,'service php5.6-fpm restart'
+            ,'update-alternatives --set php /usr/bin/php7.2'
+            ,'service php7.2-fpm restart'
             ,'service nginx restart'
         ],
         '7to5' => [
             sprintf("echo '%s'", Console::ansiFormat("php7.2->php5.6:%name%", $desFormat))
-            ,'update-alternatives --set php /usr/bin/php7.2'
-            ,'service php7.2-fpm restart'
+            ,'update-alternatives --set php /usr/bin/php5.6'
+            ,'service php5.6-fpm restart'
             ,'service nginx restart'
         ],
         'save_doc' => [
