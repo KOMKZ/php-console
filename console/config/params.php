@@ -6,6 +6,7 @@ return [
         'save_self' => [
             sprintf("echo '%s'", Console::ansiFormat("保存php-console到github:%name% {commit}", $desFormat)),
             "cd %cmd_path%",
+            "git push origin master",
             "git add --all",
             'git commit -m "%0%"',
             'git push origin master'
