@@ -28,6 +28,10 @@ class ComposerStaticInite891c4b7515a738ecd634b6ae08f5359
             'yii\\bootstrap\\' => 14,
             'yii\\' => 4,
         ),
+        'l' => 
+        array (
+            'lbase\\' => 6,
+        ),
         'c' => 
         array (
             'cebe\\markdown\\' => 14,
@@ -58,7 +62,6 @@ class ComposerStaticInite891c4b7515a738ecd634b6ae08f5359
         'E' => 
         array (
             'Elasticsearch\\' => 14,
-            'Egulias\\EmailValidator\\' => 23,
         ),
         'D' => 
         array (
@@ -69,7 +72,7 @@ class ComposerStaticInite891c4b7515a738ecd634b6ae08f5359
     public static $prefixDirsPsr4 = array (
         'yii\\swiftmailer\\' => 
         array (
-            0 => __DIR__ . '/..' . '/yiisoft/yii2-swiftmailer/src',
+            0 => __DIR__ . '/..' . '/yiisoft/yii2-swiftmailer',
         ),
         'yii\\redis\\' => 
         array (
@@ -77,7 +80,7 @@ class ComposerStaticInite891c4b7515a738ecd634b6ae08f5359
         ),
         'yii\\mongodb\\' => 
         array (
-            0 => __DIR__ . '/..' . '/yiisoft/yii2-mongodb/src',
+            0 => __DIR__ . '/..' . '/yiisoft/yii2-mongodb',
         ),
         'yii\\gii\\' => 
         array (
@@ -106,6 +109,10 @@ class ComposerStaticInite891c4b7515a738ecd634b6ae08f5359
         'yii\\' => 
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2',
+        ),
+        'lbase\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/common/lbase/src',
         ),
         'cebe\\markdown\\' => 
         array (
@@ -146,10 +153,6 @@ class ComposerStaticInite891c4b7515a738ecd634b6ae08f5359
         'Elasticsearch\\' => 
         array (
             0 => __DIR__ . '/..' . '/elasticsearch/elasticsearch/src/Elasticsearch',
-        ),
-        'Egulias\\EmailValidator\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator',
         ),
         'Doctrine\\Common\\Annotations\\' => 
         array (
