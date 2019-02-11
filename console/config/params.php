@@ -10,6 +10,11 @@ return [
             'git commit -m "%0%"',
             'git push origin master'
         ],
+        'pull_self' => [
+            sprintf("echo '%s'", Console::ansiFormat("拉取php-console:%name%", $desFormat)),
+            "cd %cmd_path%",
+            'git pull origin master'
+        ],
         'pwd' => [
             sprintf("echo '%s'", Console::ansiFormat("查看kz密码:%name%", $desFormat))
             ,'cat %kz_pwd_path%'
@@ -33,6 +38,11 @@ return [
             "git add --all",
             'git commit -m "%0%"',
             'git push origin master'
+        ],
+        'pull_doc' => [
+            sprintf("echo '%s'", Console::ansiFormat("拉取doc:%name% {commit}", $desFormat)),
+            "cd %doc_path%",
+            'git pull origin master'
         ],
         'navicat' => [
             sprintf("echo '%s'", Console::ansiFormat("启动navicat", $desFormat))
